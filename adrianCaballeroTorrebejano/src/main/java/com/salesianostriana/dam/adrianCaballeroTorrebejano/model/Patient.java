@@ -36,7 +36,19 @@ public class Patient {
 
     //metodos helper
 
-    
+    public void addDoctor(Doctor doctor){
+        doctors.add(doctor);
+        doctor.getPacients().add(this);
+    }
+
+    public void removeDoctor(Doctor doctor){
+        doctors.remove(doctor);
+        doctor.getPacients().remove(this);
+    }
 
 
 }
+
+// preguntar mejor @@SequenceGenerator
+
+// PostgreSQL, Oracle usan secuencias para generar ids, pero por ejempll MySql no?
